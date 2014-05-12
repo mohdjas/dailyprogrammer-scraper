@@ -50,9 +50,9 @@ def savePostsToFile(posts):
 			difficulty = 'hard'
 		
 							
-		if not os.path.exists(difficulty):													#Make a directory if it does not already exist
-			os.makedirs(difficulty)					
-		filename = difficulty + '/' + challenge + '.txt'						#Set pathname of file to be <difficulty>/<challengenumber>.txt
+		if not os.path.exists(difficulty + '/' + challenge):				#Make a directory if it does not already exist
+			os.makedirs(difficulty + '/' + challenge)					
+		filename = difficulty + '/' + challenge + '/problem.txt'		#Set pathname of file to be <difficulty>/<challengenumber>/problem.txt
 		if not os.path.exists(filename):
 			f = open(filename, 'w')
 			f.write(('http://www.reddit.com' + permalink + '\n\n').encode('utf-16'))
